@@ -54,3 +54,61 @@ elements.forEach(element => {
     observer.observe(element);
 
 });
+
+// AJÁNLATKÉRŐ ŰRLAP
+
+// AJÁNLATKÉRŐ ŰRLAP
+
+const quoteForm = document.getElementById("quoteForm");
+
+if (quoteForm) {
+
+    quoteForm.addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+        const button = quoteForm.querySelector(".submit-button");
+
+        button.disabled = true;
+        button.innerHTML = "Küldés...";
+
+        try {
+
+            const response = await fetch(quoteForm.action, {
+                method: "POST",
+                body: new FormData(quoteForm),
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
+
+                button.innerHTML = "✓ Ajánlatkérés elküldve";
+
+                quoteForm.reset();
+
+                setTimeout(() => {
+                    button.innerHTML =
+                        'Ajánlatkérés elküldése <span>→</span>';
+
+                    button.disabled = false;
+                }, 4000);
+
+            } else {
+
+                button.innerHTML = "Hiba történt – próbáld újra";
+                button.disabled = false;
+
+            }
+
+        } catch (error) {
+
+            button.innerHTML = "Hiba történt – próbáld újra";
+            button.disabled = false;
+
+        }
+
+    });
+
+}

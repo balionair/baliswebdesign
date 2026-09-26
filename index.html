@@ -310,42 +310,197 @@
 
 
     <!-- CONTACT -->
-    <section class="contact-section" id="contact">
+    <!-- CONTACT -->
+<section class="contact-section" id="contact">
 
-        <div class="contact-glow"></div>
+    <div class="contact-glow"></div>
 
+    <div class="contact-header">
         <span class="eyebrow">KEZDJÜK EL</span>
 
         <h2>
-            Van egy ötleted?<br>
-            <span>Építsük meg.</span>
+            Mesélj az <span>ötletedről.</span>
         </h2>
 
         <p>
-            Írj nekem, és beszéljük át, milyen weboldalra
-            van szükséged.
+            Töltsd ki az űrlapot, és felveszem veled a kapcsolatot,
+            hogy átbeszéljük a weboldalad részleteit.
         </p>
+    </div>
 
-        <a
-            href="mailto:baliswebdesign@gmail.com"
-            class="contact-button"
-        >
-            Ajánlatot kérek →
-        </a>
 
-        <div class="contact-details">
-            <a href="mailto:baliswebdesign@gmail.com">
-                baliswebdesign@gmail.com
-            </a>
+    <div class="contact-wrapper">
 
-            <span>•</span>
+        <div class="contact-info">
 
-            <a href="tel:+36304867961">
-                +36 30 486 7961
-            </a>
+            <span class="contact-small">BALI'S WEB DESIGN</span>
+
+            <h3>
+                Építsünk valami<br>
+                igazán jót.
+            </h3>
+
+            <p>
+                Új weboldalra van szükséged, vagy a jelenlegit
+                szeretnéd modernebbé tenni? Írd le röviden az
+                elképzelésed.
+            </p>
+
+
+            <div class="contact-item">
+                <span>Email</span>
+
+                <a href="mailto:baliswebdesign@gmail.com">
+                    baliswebdesign@gmail.com
+                </a>
+            </div>
+
+
+            <div class="contact-item">
+                <span>Telefon</span>
+
+                <a href="tel:+36304867961">
+                    +36 30 486 7961
+                </a>
+            </div>
+
         </div>
 
-    </section>
+
+        <form
+    class="contact-form"
+    id="quoteForm"
+    action="https://formspree.io/f/xgavnrgp"
+    method="POST"
+>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="name">Név *</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Teljes neved"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="email@pelda.hu"
+                        required
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="service">
+                    Miben segíthetek?
+                </label>
+
+                <select id="service" name="service">
+
+                    <option value="">
+                        Válassz szolgáltatást
+                    </option>
+
+                    <option value="Új weboldal">
+                        Új weboldalt szeretnék
+                    </option>
+
+                    <option value="Weboldal modernizálás">
+                        Meglévő weboldal modernizálása
+                    </option>
+
+                    <option value="Webdesign">
+                        Webdesign
+                    </option>
+
+                    <option value="Egyéb">
+                        Egyéb
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="budget">
+                    Tervezett keret
+                </label>
+
+                <select id="budget" name="budget">
+
+                    <option value="">
+                        Válassz hozzávetőleges keretet
+                    </option>
+
+                    <option value="50000-100000">
+                        50 000 – 100 000 Ft
+                    </option>
+
+                    <option value="100000-200000">
+                        100 000 – 200 000 Ft
+                    </option>
+
+                    <option value="200000+">
+                        200 000 Ft felett
+                    </option>
+
+                    <option value="Nem tudom">
+                        Még nem tudom
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="message">
+                    Mesélj a projektről *
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Milyen weboldalt szeretnél? Mi a vállalkozásod? Van már elképzelésed?"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button type="submit" class="submit-button">
+                Ajánlatkérés elküldése
+                <span>→</span>
+            </button>
+
+            <p class="form-note">
+                Az ajánlatkérés elküldése nem jár kötelezettséggel.
+            </p>
+
+        </form>
+
+    </div>
+
+</section>
 
 </main>
 
