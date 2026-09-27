@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocity Detailing | Koncepció</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #090a0d;
+            color: white;
+        }
+
+        .demo-nav {
+            height: 85px;
+            padding: 0 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #8b7cff;
+        }
+
+        .demo-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .nav-button {
+            padding: 12px 22px;
+            border: 1px solid rgba(255,255,255,.3);
+            border-radius: 30px;
+        }
+
+        .demo-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 7% 70px;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at 75% 40%, rgba(109,93,252,.35), transparent 30%),
+                linear-gradient(135deg, #08090c 0%, #11131a 100%);
+        }
+
+        .demo-hero::after {
+            content: "";
+            position: absolute;
+            width: 550px;
+            height: 550px;
+            right: -100px;
+            top: 15%;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,.08);
+            box-shadow:
+                0 0 100px rgba(109,93,252,.15),
+                inset 0 0 100px rgba(109,93,252,.08);
+        }
+
+        .hero-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            color: #8b7cff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(55px, 8vw, 115px);
+            line-height: .9;
+            letter-spacing: -6px;
+            max-width: 1000px;
+        }
+
+        h1 span {
+            color: #8b7cff;
+        }
+
+        .hero-text {
+            max-width: 550px;
+            color: #a8abb5;
+            line-height: 1.7;
+            margin-top: 30px;
+            font-size: 16px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .primary {
+            padding: 16px 27px;
+            background: #7565ff;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .secondary {
+            padding: 16px 27px;
+            border: 1px solid #343741;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .stats {
+            position: absolute;
+            bottom: 40px;
+            right: 7%;
+            display: flex;
+            gap: 50px;
+            z-index: 2;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 25px;
+        }
+
+        .stat span {
+            color: #777b87;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .concept {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 9px 14px;
+            border-radius: 20px;
+            background: rgba(255,255,255,.1);
+            backdrop-filter: blur(10px);
+            font-size: 10px;
+            letter-spacing: 2px;
+            z-index: 20;
+        }
+
+        @media(max-width: 700px) {
+            h1 {
+                letter-spacing: -3px;
+            }
+
+            .stats {
+                display: none;
+            }
+
+            .demo-nav .nav-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="demo-nav">
+    <div class="logo">VELOCITY<span>.</span></div>
+
+    <a href="#" class="nav-button">IDŐPONTFOGLALÁS</a>
+</nav>
+
+<section class="demo-hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">PREMIUM AUTO DETAILING • BUDAPEST</div>
+
+        <h1>
+            AZ AUTÓD.<br>
+            <span>ÚJ SZINTEN.</span>
+        </h1>
+
+        <p class="hero-text">
+            Professzionális autókozmetika azoknak, akiknek az autó
+            több egyszerű közlekedési eszköznél. Precíz részletek,
+            prémium ápolás és kompromisszummentes végeredmény.
+        </p>
+
+        <div class="buttons">
+            <a href="#" class="primary">IDŐPONTOT FOGLALOK →</a>
+            <a href="#" class="secondary">SZOLGÁLTATÁSOK</a>
+        </div>
+
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <strong>250+</strong>
+            <span>ELKÉSZÜLT AUTÓ</span>
+        </div>
+
+        <div class="stat">
+            <strong>4.9</strong>
+            <span>ÜGYFÉLÉRTÉKELÉS</span>
+        </div>
+
+        <div class="stat">
+            <strong>100%</strong>
+            <span>PRÉMIUM ÁPOLÁS</span>
+        </div>
+    </div>
+
+</section>
+
+<div class="concept">
+    BALI'S WEB DESIGN • DEMO KONCEPCIÓ
+</div>
+
+</body>
+</html>

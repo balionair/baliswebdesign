@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NordAir Klíma | Demo koncepció</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8fb;
+            color: #10212b;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90px;
+            padding: 0 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #2495c7;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #10212b;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-links .quote {
+            background: #10212b;
+            color: white;
+            padding: 14px 22px;
+            border-radius: 50px;
+        }
+
+        .hero {
+            min-height: 100vh;
+            padding: 130px 7% 60px;
+            display: grid;
+            grid-template-columns: 1fr .9fr;
+            align-items: center;
+            gap: 60px;
+            overflow: hidden;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            color: #2495c7;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 3px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background: #2495c7;
+        }
+
+        h1 {
+            max-width: 750px;
+            font-size: clamp(55px, 7vw, 105px);
+            line-height: .92;
+            letter-spacing: -6px;
+        }
+
+        h1 span {
+            color: #2495c7;
+        }
+
+        .description {
+            max-width: 560px;
+            margin-top: 30px;
+            color: #667984;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            margin-top: 35px;
+        }
+
+        .primary,
+        .secondary {
+            display: inline-block;
+            padding: 16px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .primary {
+            background: #2495c7;
+            color: white;
+        }
+
+        .secondary {
+            border: 1px solid #cbd9e0;
+            color: #10212b;
+        }
+
+        .trust {
+            display: flex;
+            gap: 45px;
+            margin-top: 65px;
+        }
+
+        .trust strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 24px;
+        }
+
+        .trust span {
+            color: #81919a;
+            font-size: 9px;
+            letter-spacing: 1px;
+        }
+
+        .visual {
+            position: relative;
+            height: 650px;
+        }
+
+        .visual-bg {
+            position: absolute;
+            width: 570px;
+            height: 570px;
+            top: 40px;
+            right: -50px;
+            border-radius: 50%;
+            background: #dceff7;
+        }
+
+        .aircon {
+            position: absolute;
+            width: 480px;
+            height: 165px;
+            top: 180px;
+            right: 40px;
+            border-radius: 20px 20px 35px 35px;
+            background: linear-gradient(180deg, #ffffff, #eaf1f4);
+            box-shadow: 0 30px 60px rgba(16,33,43,.16);
+            transform: rotate(-4deg);
+        }
+
+        .aircon::before {
+            content: "";
+            position: absolute;
+            left: 35px;
+            right: 35px;
+            bottom: 25px;
+            height: 12px;
+            border-radius: 20px;
+            background: #d6e0e5;
+        }
+
+        .aircon::after {
+            content: "18°";
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            color: #2495c7;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .service-card {
+            position: absolute;
+            bottom: 90px;
+            left: 20px;
+            width: 240px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,.7);
+            border-radius: 20px;
+            background: rgba(255,255,255,.75);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px rgba(16,33,43,.10);
+        }
+
+        .service-card small {
+            color: #2495c7;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .service-card h3 {
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        .service-card p {
+            margin-top: 8px;
+            color: #758791;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .concept {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            z-index: 30;
+            padding: 9px 14px;
+            border-radius: 30px;
+            background: rgba(255,255,255,.8);
+            border: 1px solid #d9e5ea;
+            backdrop-filter: blur(10px);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 800px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                letter-spacing: -3px;
+            }
+
+            .visual {
+                height: 500px;
+            }
+
+            .visual-bg {
+                width: 450px;
+                height: 450px;
+            }
+
+            .aircon {
+                width: 80%;
+                right: 10%;
+            }
+
+            .nav-links a:not(.quote) {
+                display: none;
+            }
+
+            .trust {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        NORD<span>AIR</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="#">SZOLGÁLTATÁSOK</a>
+        <a href="#">ÁRAK</a>
+        <a href="#">RÓLUNK</a>
+        <a href="#" class="quote">AJÁNLATKÉRÉS</a>
+    </div>
+</nav>
+
+<main class="hero">
+
+    <section>
+
+        <div class="eyebrow">
+            KLÍMATECHNIKA • BUDAPEST
+        </div>
+
+        <h1>
+            HŰVÖS OTTHON.<br>
+            <span>NYUGODT NYÁR.</span>
+        </h1>
+
+        <p class="description">
+            Klímatelepítés, karbantartás és tisztítás gyorsan,
+            megbízhatóan és garanciával. Segítünk kiválasztani
+            az otthonodhoz megfelelő megoldást.
+        </p>
+
+        <div class="buttons">
+            <a href="#" class="primary">
+                INGYENES AJÁNLATKÉRÉS →
+            </a>
+
+            <a href="#" class="secondary">
+                SZOLGÁLTATÁSOK
+            </a>
+        </div>
+
+        <div class="trust">
+
+            <div>
+                <strong>500+</strong>
+                <span>TELEPÍTETT KLÍMA</span>
+            </div>
+
+            <div>
+                <strong>4.9 ★</strong>
+                <span>ÜGYFÉLÉRTÉKELÉS</span>
+            </div>
+
+            <div>
+                <strong>5 év</strong>
+                <span>SZAKMAI TAPASZTALAT</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="visual">
+
+        <div class="visual-bg"></div>
+
+        <div class="aircon"></div>
+
+        <div class="service-card">
+            <small>LEGNÉPSZERŰBB</small>
+            <h3>Klímatelepítés</h3>
+            <p>
+                Felméréstől a telepítésig teljes körű
+                szolgáltatás garanciával.
+            </p>
+        </div>
+
+    </section>
+
+</main>
+
+<div class="concept">
+    BALI'S WEB DESIGN • DEMO KONCEPCIÓ
+</div>
+
+</body>
+</html>

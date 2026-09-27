@@ -1171,3 +1171,241 @@ footer {
     }
 
 }
+
+/* ========================================
+   PORTFOLIO
+======================================== */
+
+.portfolio-section {
+    padding: 120px 8%;
+    background: #ffffff;
+}
+
+.portfolio-header {
+    max-width: 750px;
+    margin-bottom: 60px;
+}
+
+.portfolio-header .section-label {
+    display: inline-block;
+    margin-bottom: 18px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #6d5dfc;
+}
+
+.portfolio-header h2 {
+    margin: 0 0 20px;
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    color: #111827;
+}
+
+.portfolio-header h2 span {
+    color: #6d5dfc;
+}
+
+.portfolio-header p {
+    max-width: 620px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #6b7280;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.portfolio-card {
+    position: relative;
+    min-height: 390px;
+    padding: 35px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: #f8f8fb;
+    border: 1px solid #ececf2;
+    border-radius: 24px;
+
+    transition: transform 0.35s ease,
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(109, 93, 252, 0.3);
+    box-shadow: 0 25px 60px rgba(17, 24, 39, 0.12);
+}
+
+.portfolio-number {
+    font-size: 70px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -5px;
+    color: rgba(109, 93, 252, 0.12);
+}
+
+.portfolio-content span {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #6d5dfc;
+}
+
+.portfolio-content h3 {
+    margin: 0 0 14px;
+    font-size: 26px;
+    color: #111827;
+}
+
+.portfolio-content p {
+    margin-bottom: 25px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #6b7280;
+}
+
+.portfolio-content a {
+    display: inline-block;
+    color: #111827;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.portfolio-content a:hover {
+    color: #6d5dfc;
+    transform: translateX(4px);
+}
+
+
+/* PORTFOLIO - MOBIL */
+
+@media (max-width: 900px) {
+
+    .portfolio-section {
+        padding: 80px 6%;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-card {
+        min-height: 330px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .portfolio-section {
+        padding: 65px 20px;
+    }
+
+    .portfolio-header {
+        margin-bottom: 40px;
+    }
+
+    .portfolio-header h2 {
+        letter-spacing: -1.5px;
+    }
+
+    .portfolio-card {
+        padding: 28px;
+        min-height: 300px;
+        border-radius: 20px;
+    }
+
+    .portfolio-number {
+        font-size: 55px;
+    }
+
+}
+
+/* ========================================
+   PORTFOLIO LIVE PREVIEW
+======================================== */
+
+.portfolio-preview {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    margin: 20px 0 28px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #0b0c10;
+    border: 1px solid #e4e4ea;
+    box-shadow: 0 15px 35px rgba(17, 24, 39, 0.10);
+}
+
+/* A teljes demo weboldalt lekicsinyítjük */
+.portfolio-preview iframe {
+    width: 1920px;
+    height: 1080px;
+
+    border: 0;
+
+    transform: scale(0.245);
+    transform-origin: top left;
+
+    pointer-events: none;
+}
+
+/* Kis címke az előnézeten */
+.portfolio-preview::after {
+    content: "LIVE PREVIEW";
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    padding: 7px 10px;
+
+    background: rgba(10, 10, 15, 0.75);
+    backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+
+    color: #ffffff;
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* Az első kártya legyen magasabb az előnézet miatt */
+.portfolio-card:first-child {
+    min-height: 520px;
+}
+
+
+/* MOBIL */
+
+@media (max-width: 600px) {
+
+    .portfolio-preview {
+        height: 150px;
+        margin: 15px 0 24px;
+    }
+
+    .portfolio-preview iframe {
+        transform: scale(0.20);
+    }
+
+    .portfolio-card:first-child {
+        min-height: 480px;
+    }
+}
